@@ -25,7 +25,7 @@ SECRET_KEY = '-(!w4wx5fc34(gk703+u40_sctk-m406q^ibl)(f27t!snw45#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['']
 
 
 # Application definition
@@ -97,12 +97,12 @@ WSGI_APPLICATION = 'arqui.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+        'ENGINE' : 'django.db.backends.mysql',
         'NAME' : 'arquidb',
-        'USER': 'postgres',
-        'PASSWORD': '14072017',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '5432'
+        'PORT': '3306',
     }
 }
 
