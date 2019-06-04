@@ -32,7 +32,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-(!w4wx5fc34(gk703+u40_sctk-m406q^ibl)(f27t!snw45#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -145,22 +144,24 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 try:
     from arqui.local_settings import *
 except ImportError:
     pass
+
 if not DEBUG:
+    SECRET_KEY = 'SECRET_KEY'
     DATABASES = {
         'default': {
-            'ENGINE' : 'django.db.backends.mysql',
+            'ENGINE' : 'django.db.backends.postgresql_psycopg2',
             'NAME' : 'DB_NAME',
             'USER': 'DB_USER',
             'PASSWORD': 'DB_PASSWORD',
             'HOST': 'DB_HOST',
-            'PORT': 'DB_PORT',
+            'PORT': 'DB_PORT'
         }
     }
 
