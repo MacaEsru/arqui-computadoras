@@ -153,7 +153,7 @@ except ImportError:
     pass
 
 if not DEBUG:
-    SECRET_KEY = 'SECRET_KEY'
+    SECRET_KEY ='SECRET_KEY'
     DATABASES = {
         'default': {
             'ENGINE' : 'django.db.backends.postgresql_psycopg2',
